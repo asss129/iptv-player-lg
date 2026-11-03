@@ -52,7 +52,7 @@ app.post('/api/xtream', async (req, res) => {
 
     const addresses = net.isIP(parsed.hostname)
       ? [{ address: parsed.hostname }]
-      : await dns.lookup(parsed.hostname, { all: true });
+    : await dns.lookup(parsed.hostname, { all: true, family: 4 });
 
     if (!addresses.length || addresses.some(
       item => !isPublicIPv4(item.address)
