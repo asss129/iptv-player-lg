@@ -80,7 +80,7 @@ function App() {
 
   const visible = useMemo(() => items.filter(x => (category === 'all' || String(x.category_id) === String(category)) && title(x).toLowerCase().includes(query.toLowerCase())), [items,category,query]);
   const streamUrl = (item, kind = section) => {
-    const ext = kind === 'live' ? (item.container_extension || 'ts') : (item.container_extension || 'mp4');
+    const ext = kind === 'live' ? 'm3u8' : (item.container_extension || 'mp4');
     const type = kind === 'live' ? 'live' : kind === 'movies' ? 'movie' : 'series';
     return `${credentials.server}/${type}/${encodeURIComponent(credentials.username)}/${encodeURIComponent(credentials.password)}/${item.stream_id || item.series_id}.${ext}`;
   };
