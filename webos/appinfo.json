@@ -1,0 +1,13 @@
+{
+  "id": "com.iptvplayer.webos",
+  "version": "1.0.0",
+  "vendor": "IPTV Player",
+  "type": "web",
+  "main": "index.html",
+  "title": "IPTV Player",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "appDescription": "Reproductor IPTV con acceso Xtream Codes para servicios autorizados.",
+  "requiredVersion": "6.0.0",
+  "resolution": "1920x1080"
+}

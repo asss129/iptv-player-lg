@@ -1,0 +1,25 @@
+{
+  "name": "iptv-player",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite --host 0.0.0.0\" \"node server/index.js\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "build:webos": "vite build && node scripts/prepare-webos.js",
+    "package:webos": "npm run build:webos && ares-package webos"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "hls.js": "^1.5.20",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.0.7"
+  }
+}
